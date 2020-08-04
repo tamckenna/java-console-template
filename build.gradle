@@ -6,7 +6,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'pmd'
-    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id "com.github.spotbugs" version "4.0.2"
     id "com.bmuschko.clover" version "2.2.5"
@@ -19,7 +19,7 @@ version = projectVersion
 sourceCompatibility = projectSourceCompatibility
 targetCompatibility = projectTargetCompatibility
 bootJar { archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}" }
-repositories { mavenCentral() ; maven { url "${customMavenRepoUrl}" } }
+repositories { mavenCentral() }
 
 // Application dependencies
 dependencies {
@@ -30,12 +30,21 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-devtools'
 
-    // Database dependencies
-    //implementation 'mysql:mysql-connector-java:8.0.19'
-    //implementation 'org.postgresql:postgresql:42.2.11'
-    //implementation 'com.oracle.jdbc:ojdbc7:12.1.0.2'
-    //implementation 'com.oracle.jdbc:ojdbc10:19.3.0.0'
-    //implementation 'com.microsoft.sqlserver:mssql-jdbc:8.2.1.jre8'
+    // Relational Database dependencies
+    //implementation 'mysql:mysql-connector-java:8.0.21'
+    //implementation 'org.postgresql:postgresql:42.2.14'
+    //implementation 'com.oracle.database.jdbc:ojdbc10:19.7.0.0'
+    //implementation 'com.microsoft.sqlserver:mssql-jdbc:8.4.0.jre8'
+
+    // Cloud dependencies
+    // implementation 'com.amazonaws:aws-java-sdk:1.11.832'
+    // implementation 'com.microsoft.azure:azure:1.36.0'
+    // implementation 'com.google.appengine:appengine-api-1.0-sdk:1.9.81'
+    // implementation 'com.google.api-client:google-api-client:1.30.10'
+    // implementation 'com.google.cloud:google-cloud-datastore:1.104.0'
+    // implementation 'com.google.cloud:google-cloud-storage:1.111.2'
+    // implementation 'com.google.cloud:google-cloud-dialogflow:2.1.0'
+    // implementation 'com.google.cloud:google-cloud-bigquery:1.116.7'
 
     // Development/Test dependencies
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
